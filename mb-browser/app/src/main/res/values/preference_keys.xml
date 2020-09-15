@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="pref_key_search_engine" translatable="false"><xliff:g id="preference_key">pref_search_engine</xliff:g></string>
+    <string name="pref_key_manual_add_search_engine" translatable="false"><xliff:g id="preference_key">pref_manual_add_search_engine</xliff:g></string>
+    <string name="pref_key_radio_search_engine_list" translatable="false">pref_radio_search_engine_list</string>
+    <string name="pref_key_multiselect_search_engine_list" translatable="false">pref_multiselect_search_engine_list</string>
+
+    <string name="pref_key_privacy_block_ads" translatable="false"><xliff:g id="preference_key">pref_privacy_block_ads</xliff:g></string>
+    <string name="pref_key_privacy_block_analytics" translatable="false"><xliff:g id="preference_key">pref_privacy_block_analytics</xliff:g></string>
+    <string name="pref_key_privacy_block_social" translatable="false"><xliff:g id="preference_key">pref_privacy_block_social</xliff:g></string>
+    <string name="pref_key_privacy_block_other" translatable="false"><xliff:g id="preference_key">pref_privacy_block_other</xliff:g></string>
+
+    <string name="pref_key_performance_block_webfonts" translatable="false"><xliff:g id="preference_key">pref_performance_block_webfonts</xliff:g></string>
+    <string name="pref_key_performance_block_images" translatable="false"><xliff:g id="preference_key">pref_performance_block_images</xliff:g></string>
+
+    <string name="pref_key_default_browser" translatable="false"><xliff:g id="preference_key">pref_default_browser</xliff:g></string>
+
+    <string name="pref_key_telemetry" translatable="false"><xliff:g id="preference_key">pref_telemetry</xliff:g></string>
+
+    <string name="pref_key_secure" translatable="false"><xliff:g id="preference_key">pref_secure</xliff:g></string>
+
+    <string name="pref_key_about" translatable="false"><xliff:g id="preference_key">pref_about</xliff:g></string>
+    <string name="pref_key_help" translatable="false"><xliff:g id="preference_key">pref_help</xliff:g></string>
+    <string name="pref_key_rights" translatable="false"><xliff:g id="preference_key">pref_rights</xliff:g></string>
+    <string name="pref_key_privacy_notice" translatable="false"><xliff:g id="preference_key">pref_privacy_notice</xliff:g></string>
+
+    <string name="pref_key_locale" translatable="false"><xliff:g id="preference_key">pref_locale</xliff:g></string>
+
+    <string name="pref_key_screen_autocomplete" translatable="false"><xliff:g id="preference_key">pref_screen_autocomplete</xliff:g></string>
+    <string name="pref_key_autocomplete_preinstalled" translatable="false"><xliff:g id="preference_key">pref_autocomplete_preinstalled</xliff:g></string>
+    <string name="pref_key_autocomplete_custom" translatable="false"><xliff:g id="preference_key">pref_autocomplete_custom</xliff:g></string>
+    <string name="pref_key_screen_custom_domains" translatable="false"><xliff:g id="preference_key">pref_screen_custom_domains</xliff:g></string>
+
+    <string name="pref_key_logout_when_removing_task" translatable="false"><xliff:g id="preference_key">pref_key_logout_when_removing_task</xliff:g></string>
+</resources>

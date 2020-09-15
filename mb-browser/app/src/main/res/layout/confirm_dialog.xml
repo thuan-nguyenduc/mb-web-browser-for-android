@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?><!-- This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this
+   - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/DialogStyle"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/dialogHorizontalPadding"
+        android:paddingEnd="@dimen/dialogHorizontalPadding"
+        android:paddingTop="16dp"
+        android:paddingBottom="10dp">
+
+        <TextView
+            android:id="@+id/titleView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:inputType="text"
+            android:paddingStart="10dp"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="?attr/activeTextColor"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        style="?android:attr/buttonBarStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:measureWithLargestChild="true"
+        android:orientation="horizontal"
+        android:paddingEnd="12dp"
+        android:paddingStart="12dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2" />
+
+        <Button
+            android:id="@+id/prompt_dialog_cancel"
+            style="?android:attr/buttonBarNegativeButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAllCaps="true"
+            android:textColor="?attr/negativeButtonColor"
+            android:textSize="14sp"
+            android:fontFamily="@string/font_roboto_medium"
+            android:text="@string/action_cancel"/>
+
+        <Button
+            android:id="@+id/prompt_dialog_ok"
+            style="?android:attr/buttonBarPositiveButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:textAllCaps="true"
+            android:textColor="?attr/positiveButtonColor"
+            android:textSize="14sp"
+            android:fontFamily="@string/font_roboto_medium"
+            android:text="@string/action_ok"/>
+    </LinearLayout>
+</LinearLayout>

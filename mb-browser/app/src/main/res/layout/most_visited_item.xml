@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:paddingTop="@dimen/mostvisited_item_paddingTop"
+    android:background="?android:attr/selectableItemBackgroundBorderless">
+
+    <LinearLayout
+        android:id="@+id/iconViewParent"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/mostvisisted_item_background"
+        android:gravity="center"
+        android:padding="@dimen/mostvisited_icon_padding">
+        <TextView
+            android:id="@+id/iconView"
+            android:layout_width="@dimen/mostvisisited_icon_size"
+            android:layout_height="@dimen/mostvisisited_icon_size"
+            android:textSize="@dimen/mostvisisited_fake_icon_font_size"
+            android:textColor="@color/mostvisisited_fake_icon_text_color"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:gravity="center"
+            android:background="@color/mostvisisited_fake_icon_background"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/faviconViewParent"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/mostvisisted_item_background"
+        android:gravity="center"
+        android:padding="@dimen/mostvisited_icon_padding"
+        android:visibility="gone">
+        <ImageView
+            android:id="@+id/faviconView"
+            android:layout_width="@dimen/mostvisisited_icon_size"
+            android:layout_height="@dimen/mostvisisited_icon_size"
+            android:gravity="center"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/titleView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/mostvisisited_title_font_size"
+        android:textColor="@color/mostvisisited_text_color"
+        android:singleLine="true"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:gravity="center"
+        android:paddingRight="3dp"
+        android:paddingLeft="3dp"/>
+</LinearLayout>

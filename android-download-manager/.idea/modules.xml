@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/android-download-manager.iml" filepath="$PROJECT_DIR$/android-download-manager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fetch2/fetch2.iml" filepath="$PROJECT_DIR$/fetch2/fetch2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fetch2downloaders/fetch2downloaders.iml" filepath="$PROJECT_DIR$/fetch2downloaders/fetch2downloaders.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fetch2rx/fetch2rx.iml" filepath="$PROJECT_DIR$/fetch2rx/fetch2rx.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fetchmigrator/fetchmigrator.iml" filepath="$PROJECT_DIR$/fetchmigrator/fetchmigrator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sampleApp/sampleApp.iml" filepath="$PROJECT_DIR$/sampleApp/sampleApp.iml" />
+    </modules>
+  </component>
+</project>

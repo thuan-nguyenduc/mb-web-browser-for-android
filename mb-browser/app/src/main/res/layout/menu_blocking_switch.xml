@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this
+   - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    android:background="?attr/blockingMenuColor"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingEnd="0dp"
+    android:paddingStart="21dp">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/trackers_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="@string/menu_trackers_blocked_title"
+            android:textColor="?attr/activeTextColor"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/trackers_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="?attr/activeTextColor"
+            android:textSize="24sp"
+            tools:text="0" />
+
+    </LinearLayout>
+
+    <Switch
+        android:id="@+id/blocking_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_gravity="center_vertical|end"
+        android:background="?android:attr/selectableItemBackground"
+        android:checked="true"
+        android:clickable="true"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:lines="1"
+        android:paddingEnd="16dp"
+        android:paddingStart="16dp"
+        android:contentDescription="@string/content_description_blocking_switch"
+        android:textSize="16sp"/>
+
+</LinearLayout>

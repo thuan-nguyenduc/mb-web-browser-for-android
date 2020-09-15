@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this
+   - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
+<resources>
+    <string name="app_name" translatable="true">Video Downloader</string>
+
+    <string name="download_folder" translatable="false">video_downloader</string>
+
+    <!-- This String is used in the User Agent -->
+    <string name="useragent_appname" translatable="false">video_downloader</string>
+    <string name="useragent_desktopsite" translatable="false">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36</string>
+
+    <string name="report_email" translatable="false">xmon2016@gmail.com</string>
+
+    <string name="app_public_key" translatable="false">MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtt9nQxBIj9A7t0hpJ+rCrD/1ERJPGLyg/ZVHDMwOOvf/gL1ZUAnDBWf656zYQGiLklvafxh2tDAdcgYTtj1LxYRV4FhbCeTbjK807faiWVShkhnXMSDs1l1v1NSUZcskNIlf9RW9UtIFDRuzhvyD45qWRMUblcIu4tI0wvp9fEgdH/PAGoqe7MueBq/n+v8Q8qMAMeE4vqdWlPfb8yokD4rHSN3QN4oy7jqUNZNF46RjAlkJJT3fErkH4bh3or+XECNvkqIlF/hENcZMNANQW6zM92e7s0AGtXo2oAqq1TwFCmX0GSpfj7clY2Ph5hhOHlIFphimjpZbDaPmYgxKmwIDAQAB</string>
+    <string name="app_payload" translatable="false">MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtt9nQxB</string>
+</resources>

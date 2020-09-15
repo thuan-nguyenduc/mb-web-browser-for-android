@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/bottomsheet_min_height">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/bottomsheet_min_height"
+        android:background="@drawable/background_dialog">
+        <LinearLayout
+            android:id="@+id/noDataView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="@dimen/bottomsheet_margin"
+            android:layout_marginTop="@dimen/bottomsheet_margin">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_download"/>
+
+            <TextView
+                android:id="@+id/bottomSheetTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/mediaparser_bottomsheet_title"
+                android:textSize="@dimen/bottomsheet_title_text_size"
+                android:textColor="@color/colorTextActive"
+                android:ellipsize ="none"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/hasDataView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="@dimen/bottomsheet_margin"
+            android:layout_marginTop="@dimen/bottomsheet_margin"
+            android:visibility="gone">
+            <CheckBox
+                android:id="@+id/allView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/mediaparser_bottomsheet_title"
+                android:textSize="@dimen/bottomsheet_title_text_size"
+                android:textColor="@color/colorTextActive"
+                android:buttonTint="?android:attr/colorAccent"
+                android:ellipsize ="none"
+                android:textStyle="bold"
+                android:visibility="visible"
+                android:enabled="false"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:id="@+id/viewError"
+            android:visibility="gone">
+            <TextView
+                android:id="@+id/txtError"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/mediaparser_no_result"
+                android:textSize="@dimen/bottomsheet_info_text_size"
+                android:textColor="@color/colorTextActive"
+                android:ellipsize ="none"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/bottomsheet_text_margintop"
+                android:layout_marginLeft="@dimen/bottomsheet_margin"
+                android:layout_marginRight="@dimen/bottomsheet_margin"
+                android:singleLine="false"/>
+
+            <Button
+                android:id="@+id/btnReport"
+                style="?android:attr/buttonBarNegativeButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAllCaps="true"
+                android:textColor="@color/overThemeButtonAccent"
+                android:text="@string/action_report"
+                android:layout_gravity="center"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/txtYoutubeWarning"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/mediaparser_youtube_warning"
+            android:textSize="@dimen/bottomsheet_info_text_size"
+            android:textColor="@color/colorTextActive"
+            android:ellipsize ="none"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/bottomsheet_text_margintop"
+            android:layout_marginLeft="@dimen/bottomsheet_margin"
+            android:layout_marginRight="@dimen/bottomsheet_margin"
+            android:singleLine="false"
+            android:gravity="center"
+            android:visibility="gone"/>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/bottomsheet_text_margintop"/>
+
+        <RelativeLayout
+            android:id="@+id/downloadView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/downloadList"
+                android:scrollbars="vertical"
+                android:layout_width="match_parent"
+                android:layout_marginBottom="50dp"
+                android:layout_height="wrap_content"
+                />
+
+            <LinearLayout
+                android:id="@+id/btnDownloadButtons"
+                style="?android:attr/buttonBarStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:measureWithLargestChild="true"
+                android:orientation="horizontal"
+                android:layout_alignParentBottom="true"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/btnCancel"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAllCaps="true"
+                    android:textColor="@color/negativeButtonAccent"
+                    android:text="@string/action_cancel"
+                    android:layout_marginEnd="10dp"/>
+
+                <Button
+                    android:id="@+id/btnDownload"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:textAllCaps="true"
+                    android:textColor="@color/positiveButtonAccent"
+                    android:text="@string/download_dialog_action_download"
+                    android:enabled="false"
+                    android:alpha="0.5"/>
+            </LinearLayout>
+
+        </RelativeLayout>
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/nightModeView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/black"
+        android:alpha="0.5"
+        android:visibility="gone" />
+</FrameLayout>

@@ -1,0 +1,13 @@
+<!-- This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this
+   - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
+
+<SearchPlugin xmlns="http://www.mozilla.org/2006/browser/search/">
+  <ShortName>Bing</ShortName>
+  <Image width="16" height="16">data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAzUExURQyEhCOPjzGXl0Gfn1OoqF+urm61tX++vpPJyaXS0rLY2L7e3szl5dns7OXy8vP5+f///xfq9dcAAACMSURBVDjL1dPBDgIhDARQhq3bIhbm/792D4bVROjeNM6VF0rbkNK3Ar0hBk43iQHpuADtPwDyBcj1vuewRCG97FgD6STpJlgAVD7juuhCOQTmAOoxSAnaYiA1vCFbW5dwnC9gs1kXOppkldkczvjnLN+B22zUj3Hcyzbd1lb6vPgrUknX6Hdgt5x+kQNn5Q3ayatBLQAAAABJRU5ErkJggg==</Image>
+  <Url type="text/html" method="GET" template="https://www.bing.com/search/">
+    <Param name="q" value="{searchTerms}"/>
+  </Url>
+  <InputEncoding>UTF-8</InputEncoding>
+  <SearchForm>https://bing.com</SearchForm>
+</SearchPlugin>

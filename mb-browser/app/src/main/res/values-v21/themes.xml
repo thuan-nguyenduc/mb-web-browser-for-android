@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme.Toolbar" parent="AppTheme">
+        <item name="android:textColorPrimary">@color/colorTextActive</item>
+        <item name="android:editTextColor">@color/colorTextActive</item>
+        <item name="android:textColorHint">@color/colorTextInactive</item>
+        <item name="searchViewStyle">@style/AppTheme.SearchView</item>
+
+        <!-- We need to set this because this error https://issuetracker.google.com/issues/37008551#comment5 -->
+        <item name="homeAsUpIndicator">@drawable/ic_back</item>
+    </style>
+</resources>

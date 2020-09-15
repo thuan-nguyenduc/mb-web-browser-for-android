@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this
+   - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:id="@+id/browser_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.xlab.vbrowser.widget.ResizableKeyboardCoordinatorLayout
+            app:viewToHideWhenActivated="@+id/bottomBar"
+            android:layout_marginTop="0dp"
+            android:id="@+id/main_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:clipChildren="false">
+
+            <android.support.v4.widget.SwipeRefreshLayout
+                android:id="@+id/swipe_refresh"
+                android:background="@android:color/transparent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                android:enabled="true"
+                android:visibility="gone">
+                <com.xlab.vbrowser.web.IWebView
+                    android:id="@+id/webview"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scrollbarThumbVertical="@drawable/scrollbar_thumb" />
+            </android.support.v4.widget.SwipeRefreshLayout>
+
+            <android.support.v4.widget.NestedScrollView
+                android:background="@android:color/transparent"
+                android:orientation="vertical"
+                android:id="@+id/homePageView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                android:visibility="gone"
+                tools:visibility="visible"
+                android:enabled="false"
+                android:fillViewport="true">
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingBottom="20dp">
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/quickDialView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:numColumns="auto_fit"
+                            android:stretchMode="columnWidth"
+                            android:paddingStart="@dimen/mostvisited_item_padding"
+                            android:paddingEnd="@dimen/mostvisited_item_padding"
+                            tools:visibility="gone"
+                            />
+
+                        <TextView
+                            android:id="@+id/mostVisistedSeperatorHeader"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/homepage_mostvisited_header"
+                            android:textColor="@color/mostvisisited_text_color"
+                            android:textSize="16sp"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginStart="13dp"
+                            android:fontFamily="@string/font_roboto_medium"
+                            android:visibility="gone"/>
+
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/mostVisitedView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:numColumns="auto_fit"
+                            android:stretchMode="columnWidth"
+                            />
+                    </LinearLayout>
+            </android.support.v4.widget.NestedScrollView>
+
+            <include
+                layout="@layout/browser_display_toolbar" />
+
+            <include
+                layout="@layout/browser_bottom_toolbar" />
+        </com.xlab.vbrowser.widget.ResizableKeyboardCoordinatorLayout>
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/video_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/black"
+        android:visibility="gone" />
+</FrameLayout>

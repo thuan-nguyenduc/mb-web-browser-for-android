@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this
+   - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    xmlns:tool="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:clickable="true"
+    android:background="?android:attr/selectableItemBackground">
+    <TextView
+        android:id = "@+id/titleView"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:paddingStart="16dp"
+        android:paddingEnd="2dp"
+        android:textSize="16sp"
+        android:gravity="center_vertical"
+        android:lines="1"
+        android:ellipsize="end"
+        android:singleLine="true"
+        tool:text="text"
+        android:layout_toStartOf="@+id/actionButtonView"
+        android:layout_alignParentStart="true"
+        style="@android:style/TextAppearance.Material.Menu"
+        android:drawablePadding="5dp"
+        android:textColor="?attr/activeTextColor"
+        />
+
+    <ImageButton
+        android:id = "@+id/actionButtonView"
+        android:background="?android:attr/selectableItemBackgroundBorderless"
+        android:layout_width="40dp"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:src="@drawable/ic_settings"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="5dp"/>
+</RelativeLayout>

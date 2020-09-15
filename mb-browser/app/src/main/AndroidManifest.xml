@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this
+   - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.xlab.vbrowser">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
+    <!--<uses-permission android:name="android.permission.RECORD_AUDIO" />-->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="com.android.vending.BILLING" />
+
+    <application
+        android:hardwareAccelerated="true"
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme"
+        android:supportsRtl="true"
+        android:name="com.xlab.vbrowser.UpApplication">
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths"/>
+        </provider>
+
+        <activity android:name="com.xlab.vbrowser.activity.MainActivity"
+            android:theme="@style/AppTheme.Launcher"
+            android:launchMode="singleTask"
+            android:configChanges="keyboard|keyboardHidden|mcc|mnc|orientation|screenSize|locale|layoutDirection|smallestScreenSize|screenLayout"
+            android:windowSoftInputMode="adjustResize|stateAlwaysHidden"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="http" />
+                <data android:scheme="https" />
+            </intent-filter>
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:scheme="http" />
+                <data android:scheme="https" />
+                <data android:mimeType="text/html"/>
+                <data android:mimeType="text/plain"/>
+                <data android:mimeType="application/xhtml+xml"/>
+            </intent-filter>
+
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+
+            <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts" />
+        </activity>
+
+        <activity android:name="com.xlab.vbrowser.activity.TextActionActivity"
+            android:label="@string/text_selection_search_action"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.PROCESS_TEXT" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+        </activity>
+
+        <!-- SettingsActivity title is set dynamically for multilocale support -->
+        <activity android:name="com.xlab.vbrowser.activity.SettingsActivity"
+            android:configChanges="locale"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity android:name="com.xlab.vbrowser.downloadmanagers.DownloadManagerActivity"
+            android:configChanges="keyboard|keyboardHidden|mcc|mnc|orientation|screenSize|locale|layoutDirection|smallestScreenSize|screenLayout"
+            android:windowSoftInputMode="adjustResize"
+            android:parentActivityName="com.xlab.vbrowser.activity.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.xlab.vbrowser.activity.MainActivity" />
+        </activity>
+
+        <activity android:name="com.xlab.vbrowser.history.activity.HistoryActivity"
+            android:configChanges="keyboard|keyboardHidden|mcc|mnc|orientation|screenSize|locale|layoutDirection|smallestScreenSize|screenLayout"
+            android:windowSoftInputMode="adjustResize" >
+        </activity>
+
+        <activity android:name="com.xlab.vbrowser.bookmark.activity.BookmarkActivity"
+            android:configChanges="keyboard|keyboardHidden|mcc|mnc|orientation|screenSize|locale|layoutDirection|smallestScreenSize|screenLayout"
+            android:windowSoftInputMode="adjustResize" >
+        </activity>
+
+        <activity android:name="com.xlab.vbrowser.activity.InfoActivity"
+                  android:theme="@style/InfoTheme"/>
+
+        <activity android:name="com.xlab.vbrowser.activity.EraseShortcutActivity"
+            android:theme="@android:style/Theme.Translucent" />
+
+        <!--(thuan): We don't support customtab now -->
+        <!--<service
+            android:name="com.xlab.vbrowser.customtabs.CustomTabsService"
+            android:exported="true"
+            tools:ignore="ExportedService">
+            <intent-filter>
+                <action android:name="android.support.customtabs.action.CustomTabsService" />
+            </intent-filter>
+        </service>-->
+
+        <service android:name="com.xlab.vbrowser.session.SessionNotificationService"
+            android:exported="false" />
+
+        <service android:name="com.xlab.vbrowser.downloadmanagers.DownloadManagerActionService"
+            android:exported="false" />
+
+        <meta-data android:name="android.webkit.WebView.MetricsOptOut"
+                   android:value="true" />
+    </application>
+
+</manifest>

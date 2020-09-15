@@ -1,0 +1,6 @@
+include ':app', ':fetch2', ':fetch2downloaders', ':js', ':test-hls-downloader'
+project(':fetch2').projectDir = new File('../android-download-manager/fetch2')
+project(':fetch2downloaders').projectDir = new File('../android-download-manager/fetch2downloaders')
+project(':js').projectDir = new File('../js')
+
+

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this
+   - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
+<resources>
+    <!-- Primary color -->
+    <color name="colorPrimary">#F2F2F2</color>
+    <color name="colorPrimaryDark">#6c3b6e</color>
+    <color name="colorAccent">#FFA400</color>
+
+    <!-- Settings -->
+    <color name="darkColorPrimary">#ff453440</color>
+
+    <!-- Primary color for settings -->
+    <color name="colorAccentSettings">@color/photonBlue50</color>
+    <color name="preference_row_selected">@color/photonBlue40</color>
+
+
+    <!-- Primary color for progressbar -->
+    <color name="colorProgressGradientStart">@color/photonBlue50</color>
+    <color name="colorProgressGradientCenter">@color/photonBlue50</color>
+    <color name="colorProgressGradientEnd">@color/photonBlue50</color>
+
+
+    <!-- For TabManager -->
+    <color name="colorErase">#FFff0000</color>
+    <color name="colorErasePressed">@color/photonMagenta80</color>
+    <color name="selectedColorSheetSessionBackground">#FFF8F3</color>
+    <color name="normalColorSheetSessionBackground">#F0F0F0</color>
+    <color name="colorSheetSessionBackgroundPressed">#ffededf0</color>
+    <color name="colorNormalSession">#414141</color>
+    <color name="colorSelectedSession">#FFA400</color>
+
+
+    <!-- For UrlInputFragment -->
+    <color name="colorOverlay">#cc000000</color>
+    <color name="searchHintTextColor">#ffffffff</color>
+    <color name="urlbar_background">#F2F2F2</color>
+
+
+    <!-- For snackbar -->
+    <color name="snackbarBackground">#FF414146</color>
+    <color name="snackbarTextColor">#ffffffff</color>
+    <color name="snackbarActionText">@color/photonBlue50</color>
+
+
+    <!-- For dialog -->
+    <color name="dialogAccent">@color/photonBlue50</color>
+    <color name="overThemeButtonAccent">@color/photonBlue50</color>
+    <color name="positiveButtonAccent">@color/photonBlue50</color>
+    <color name="negativeButtonAccent">#80212121</color>
+    <color name="dialog_background">#ffffffff</color>
+    <color name="add_to_homescreen_icon_background">#FF008000</color>
+
+    <!-- Dark dialog -->
+    <color name="dark_dialog_background">#424242</color>
+    <color name="darkPositiveButtonAccent">@color/photonBlue50</color>
+    <color name="darkNegativeButtonAccent">#60ffffff</color>
+
+    <!-- For scrollbar of WebView -->
+    <color name="scrollbarThumb">#b2b2b2b2</color>
+
+
+    <!-- For MostVisisted and QuickAccess -->
+    <color name="mostvisisited_text_color">#414141</color>
+    <color name="mostvisisited_fake_icon_text_color">#FFFFFF</color>
+    <color name="mostvisisited_fake_icon_background">#FF008000</color>
+
+
+    <!-- This 2 colors is used for ListViewItem, with a main text and a sub text-->
+    <color name="list_header_text_color">#000000</color>
+    <color name="list_title_text_color">#414141</color>
+    <color name="list_info_text_color">#B3414141</color>
+
+    <!-- For vector icon -->
+    <color name="colorEnabledIcon">#FFA400</color>
+    <color name="colorDefaultIcon">#797979</color>
+    <color name="colorLightDefaultIcon">#ffffff</color>
+    <color name="colorDefaultDisabledIcon">#B3FFFFFF</color>
+
+
+    <!-- For text -->
+    <color name="colorTextInactive">#80212121</color>
+    <color name="colorTextActive">#414141</color>
+    <color name="colorControlHighlight">#30212121</color>
+    <color name="colorLightTextActive">#ffffff</color>
+    <color name="colorLightTextInactive">#60ffffff</color>
+    <color name="colorRateText">#ff0000</color>
+
+
+    <!-- For blocking circle in topbar -->
+    <color name="colorBlockInfo">#FFA400</color >
+    <color name="color_blocking_menu">#E1E1E6</color>
+    <color name="dark_color_blocking_menu">#20ffffff</color>
+
+    <!-- Floating ads action button background -->
+    <color name="semi_transparent_color">#40000066</color>
+</resources>

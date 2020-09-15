@@ -1,0 +1,126 @@
+/* -*- Mode: Java; c-basic-offset: 4; tab-width: 20; indent-tabs-mode: nil; -*-
+ Copyright by MonnyLab */
+package com.xlab.vbrowser.webview.matcher;
+
+import android.content.SharedPreferences;
+import android.net.Uri;
+import android.os.StrictMode;
+import android.preference.PreferenceManager;
+
+import com.xlab.vbrowser.BuildConfig;
+
+import org.junit.After;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.robolectric.RobolectricTestRunner;
+import org.robolectric.RuntimeEnvironment;
+import org.robolectric.annotation.Config;
+
+import static junit.framework.Assert.assertFalse;
+import static junit.framework.Assert.assertTrue;
+
+/**
+ * Integration test for tracking protection, which tests that some real websites are/aren't
+ * blocked under given circumstances.
+ *
+ * UrlMatcherTest tests the general correctness of our URL matching code, this test is intended
+ * to verify that our disconnect lists are loaded correctly (and therefore are dependent on the
+ * contents of our disconnect lists).
+ *
+ * This test also verifies that the entity lists (whitelists for specific domains) actually work
+ */
+@RunWith(RobolectricTestRunner.class)
+@Config(constants = BuildConfig.class, packageName = "com.xlab.vbrowser")
+public class DisconnectTest {
+
+    @After
+    public void cleanup() {
+        // Reset strict mode: for every test, Robolectric will create FocusApplication again.
+        // FocusApplication expects strict mode to be disabled (since it loads some preferences from disk),
+        // before enabling it itself. If we run multiple tests, strict mode will stay enabled
+        // and FocusApplication crashes during initialisation for the second test.
+        // This applies across multiple Test classes, e.g. DisconnectTest can cause
+        // TrackingProtectionWebViewCLientTest to fail, unless it clears StrictMode first.
+        // (FocusApplicaiton is initialised before @Before methods are run.)
+        StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder().build());
+    }
+
+    // IMPORTANT NOTE - IF RUNNING TESTS USING ANDROID STUDIO:
+    // Read the following for a guide on how to get AS to correctly load resources, if you don't
+    // do this you will get Resource Loading exceptions:
+    // http://robolectric.org/getting-started/#note-for-linux-and-mac-users
+    @Test
+    public void matches() throws Exception {
+        final UrlMatcher matcher = UrlMatcher.loadMatcher(RuntimeEnvironment.application, com.xlab.vbrowser.R.raw.blocklist, new int[] { com.xlab.vbrowser.R.raw.google_mapping }, com.xlab.vbrowser.R.raw.entitylist);
+
+
+        // Enable everything
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(RuntimeEnvironment.application);
+        prefs.edit()
+                .putBoolean(RuntimeEnvironment.application.getString(com.xlab.vbrowser.R.string.pref_key_privacy_block_ads), true)
+                .putBoolean(RuntimeEnvironment.application.getString(com.xlab.vbrowser.R.string.pref_key_privacy_block_analytics), true)
+                .putBoolean(RuntimeEnvironment.application.getString(com.xlab.vbrowser.R.string.pref_key_privacy_block_other), true)
+                .putBoolean(RuntimeEnvironment.application.getString(com.xlab.vbrowser.R.string.pref_key_privacy_block_social), true)
+                .apply();
+
+        // We check that our google_mapping was loaded correctly. We do these checks per-category, so we have:
+        // ads:
+        assertTrue(matcher.matches(Uri.parse("http://admeld.com/foobar"), Uri.parse("http://mozilla.org")));
+        // And we check that the entitylist unblocks this on google properties:
+        assertFalse(matcher.matches(Uri.parse("http://admeld.com/foobar"), Uri.parse("http://google.com")));
+        // analytics:
+        assertTrue(matcher.matches(Uri.parse("http://google-analytics.com/foobar"), Uri.parse("http://mozilla.org")));
+        assertFalse(matcher.matches(Uri.parse("http://google-analytics.com/foobar"), Uri.parse("http://google.com")));
+        // social:
+        assertTrue(matcher.matches(Uri.parse("http://plus.google.com/something"), Uri.parse("http://mozilla.org")));
+        assertFalse(matcher.matches(Uri.parse("http://plus.google.com/something"), Uri.parse("http://google.com")));
+
+        // Facebook is special in that we move it from "Disconnect" into social:
+        assertTrue(matcher.matches(Uri.parse("http://facebook.fr"), Uri.parse("http://mozilla.org")));
+        assertFalse(matcher.matches(Uri.parse("http://facebook.fr"), Uri.parse("http://facebook.com")));
+
+        // Now disable social, and check that only social sites have changed:
+        prefs.edit()
+                .putBoolean(RuntimeEnvironment.application.getString(com.xlab.vbrowser.R.string.pref_key_privacy_block_ads), true)
+                .putBoolean(RuntimeEnvironment.application.getString(com.xlab.vbrowser.R.string.pref_key_privacy_block_analytics), true)
+                .putBoolean(RuntimeEnvironment.application.getString(com.xlab.vbrowser.R.string.pref_key_privacy_block_other), true)
+                .putBoolean(RuntimeEnvironment.application.getString(com.xlab.vbrowser.R.string.pref_key_privacy_block_social), false)
+                .apply();
+
+        // ads:
+        assertTrue(matcher.matches(Uri.parse("http://admeld.com/foobar"), Uri.parse("http://mozilla.org")));
+        assertFalse(matcher.matches(Uri.parse("http://admeld.com/foobar"), Uri.parse("http://google.com")));
+        // analytics:
+        assertTrue(matcher.matches(Uri.parse("http://google-analytics.com/foobar"), Uri.parse("http://mozilla.org")));
+        assertFalse(matcher.matches(Uri.parse("http://google-analytics.com/foobar"), Uri.parse("http://google.com")));
+        // social:
+        assertFalse(matcher.matches(Uri.parse("http://plus.google.com/something"), Uri.parse("http://mozilla.org")));
+        assertFalse(matcher.matches(Uri.parse("http://plus.google.com/something"), Uri.parse("http://google.com")));
+
+        // And facebook which has been moved from Disconnect into social
+        assertFalse(matcher.matches(Uri.parse("http://facebook.fr"), Uri.parse("http://mozilla.org")));
+        assertFalse(matcher.matches(Uri.parse("http://facebook.fr"), Uri.parse("http://facebook.com")));
+
+        // Now disable everything - all sites should work:
+        prefs.edit()
+                .putBoolean(RuntimeEnvironment.application.getString(com.xlab.vbrowser.R.string.pref_key_privacy_block_ads), false)
+                .putBoolean(RuntimeEnvironment.application.getString(com.xlab.vbrowser.R.string.pref_key_privacy_block_analytics), false)
+                .putBoolean(RuntimeEnvironment.application.getString(com.xlab.vbrowser.R.string.pref_key_privacy_block_other), false)
+                .putBoolean(RuntimeEnvironment.application.getString(com.xlab.vbrowser.R.string.pref_key_privacy_block_social), false)
+                .apply();
+
+        // ads:
+        assertFalse(matcher.matches(Uri.parse("http://admeld.com/foobar"), Uri.parse("http://mozilla.org")));
+        assertFalse(matcher.matches(Uri.parse("http://admeld.com/foobar"), Uri.parse("http://google.com")));
+        // analytics:
+        assertFalse(matcher.matches(Uri.parse("http://google-analytics.com/foobar"), Uri.parse("http://mozilla.org")));
+        assertFalse(matcher.matches(Uri.parse("http://google-analytics.com/foobar"), Uri.parse("http://google.com")));
+        // social:
+        assertFalse(matcher.matches(Uri.parse("http://plus.google.com/something"), Uri.parse("http://mozilla.org")));
+        assertFalse(matcher.matches(Uri.parse("http://plus.google.com/something"), Uri.parse("http://google.com")));
+
+        // Facebook is special in that we move it from "Disconnect" into social:
+        assertFalse(matcher.matches(Uri.parse("http://facebook.fr"), Uri.parse("http://mozilla.org")));
+        assertFalse(matcher.matches(Uri.parse("http://facebook.fr"), Uri.parse("http://facebook.com")));
+    }
+}

@@ -1,0 +1,13 @@
+<!-- This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this
+   - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
+
+<SearchPlugin xmlns="http://www.mozilla.org/2006/browser/search/">
+  <ShortName>Facebook</ShortName>
+  <Image width="16" height="16">data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABdElEQVRYhWP0zF35n5GRYWDA//8MTANmOQMDAwMjIwPTAFrPwMDAMPAOYKFEs4QwN4OfvSqDgZo4gzA/JwMjIwPD7z//GK7de8PQOu8YbR1gpSfNUBJnwcDOyowhJ8TPQbQ5ZDlAUpiboTTOgoENi+UMDAwMv3//o60DfGxVMCz/++8fw4+ffxgYGBgYvv34TVsHaCgIo/DP33zB0DznKMPPX39JNousXMDOhurus9dfkGU52Q5AB//+/Sdb79ApBzQVhBm4OFkZGBgYGDg5ULXJivMxGGtKwPnffvxmuH7/LVHmMnrlrSQq/CaXujIoyQgSZeidx+8Y8nv2EKWWJlHw7ccfotXSxAGw8oAYQHQauPXoHcOX75ACRk1OiIGDHaH12evPDG8+fEdRS3UHTF55Fs6eUubGoCgtAOdvOXyHYePB20RbigwGPBuOOmDUAUPUAVRsyg/REBhwB6DVn//Jb48QXx3TCgzRKKCqAyiJQCoAAB6iYGduTA8qAAAAAElFTkSuQmCC</Image>
+  <Url type="text/html" method="GET" template="https://www.facebook.com/search/top/">
+    <Param name="q" value="{searchTerms}"/>
+  </Url>
+  <InputEncoding>UTF-8</InputEncoding>
+  <SearchForm>https://facebook.com</SearchForm>
+</SearchPlugin>

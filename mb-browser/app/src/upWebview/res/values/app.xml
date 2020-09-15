@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this
+   - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
+<resources>
+    <string name="app_name" translatable="true">Go Browser</string>
+
+    <string name="download_folder" translatable="false">Go_Browser</string>
+
+    <!-- This String is used in the User Agent -->
+    <string name="useragent_appname" translatable="false">Go_Browser</string>
+    <string name="useragent_desktopsite" translatable="false">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36</string>
+
+    <string name="report_email" translatable="false">xmon2016@gmail.com</string>
+
+    <string name="app_public_key" translatable="false">MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAj4zTpdjadh/XfIYQvXSTFcUggol8qxMArWzuOv5DnmL3S+zl8U/CjU6SLmuJqkGyZjo03GBahfm6gXxEO/xtElDlbHbH4dX1Cg836ruzcETL+ZGQJbzEUx1gqm71uum0l4EvzIAbDihTOIva6yCO6ijmxVaf0dt1akkGSsCIKSS9MHWYE6Kh1kPyRbj+ca/23UK4DGdarXE+Lkn1RJzMtjYLEE5PNFfwO1Z99a1Ny+0D02/sQIuFV+mHs68jnzqYH3fA8IFdTeCygi/SfW/+CyMtvRjfWK6zEAFgQc5RfPjEhADflIKEUec49uLqxyV5+A2nDfY+LiAn2WeIN6aCjQIDAQAB</string>
+    <string name="app_payload" translatable="false">MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAj4zTpdjadh</string>
+</resources>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this
+   - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
+<resources>
+    <style name="AppTheme.Launcher" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">false</item>
+        <item name="android:windowFullscreen">false</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+    </style>
+
+    <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="android:windowContentTransitions">true</item>
+
+        <item name="popupMenuStyle">@style/PopupMenu</item>
+
+        <item name="android:statusBarColor">@android:color/transparent</item>
+
+        <item name="windowActionModeOverlay">true</item>
+
+        <!-- color for control when press/long press -->
+        <item name="colorControlHighlight">@color/colorControlHighlight</item>
+
+        <!-- inactive thumb color -->
+        <item name="android:colorForeground">@color/colorTextInactive</item>
+
+        <!-- dialog style -->
+        <item name="activeTextColor">@color/colorTextActive</item>
+        <item name="dialogBackground">@color/dialog_background</item>
+        <item name="positiveButtonColor">@color/positiveButtonAccent</item>
+        <item name="negativeButtonColor">@color/negativeButtonAccent</item>
+
+        <!-- icon style -->
+        <item name="defaultIconColor">@color/colorDefaultIcon</item>
+        <item name="inactiveTextColor">@color/colorTextInactive</item>
+
+        <!-- menu -->
+        <item name="blockingMenuColor">@color/color_blocking_menu</item>
+    </style>
+
+    <style name="AppTheme.Dark" parent="AppTheme">
+        <!-- dialog style -->
+        <item name="activeTextColor">@color/colorLightTextActive</item>
+        <item name="dialogBackground">@color/dark_dialog_background</item>
+        <item name="positiveButtonColor">@color/darkPositiveButtonAccent</item>
+        <item name="negativeButtonColor">@color/darkNegativeButtonAccent</item>
+
+        <!-- icon style -->
+        <item name="defaultIconColor">@color/colorLightDefaultIcon</item>
+        <item name="inactiveTextColor">@color/colorLightTextInactive</item>
+
+        <!-- menu -->
+        <item name="blockingMenuColor">@color/dark_color_blocking_menu</item>
+    </style>
+
+    <style name="AppTheme.SearchView" parent="Widget.AppCompat.SearchView">
+        <!-- Close button icon -->
+        <item name="closeIcon">@drawable/ic_close</item>
+    </style>
+
+    <style name="DialogTitleStyle" parent="TextAppearance.AppCompat.Title">
+        <item name="android:textColor">?attr/activeTextColor</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:fontFamily">@string/font_roboto_medium</item>
+        <item name="android:background">?attr/dialogBackground</item>
+    </style>
+
+    <!-- Setting this via alertDialogStyle in AppTheme results in crashes. You need to
+         explicitly select this via "new AlertDialog.Builder(activity, R.style.DialogStyle)"
+         We need this style because the accent colour for the MainActivity is purple,
+         but we want different accents in the dialog. -->
+    <style name="DialogStyle" parent="Theme.AppCompat.Dialog.Alert">
+        <item name="android:windowTitleStyle">@style/DialogTitleStyle</item>
+        <item name="dialogPreferredPadding">24dp</item>
+        <item name="android:background">?attr/dialogBackground</item>
+        <item name="android:textColorPrimary">?attr/activeTextColor</item>
+        <item name="android:textColorAlertDialogListItem">@color/darkColorPrimary</item>
+    </style>
+
+
+    <style name="SettingsTheme" parent="AppTheme">
+    </style>
+
+    <style name="InfoTheme" parent="SettingsTheme">
+        <item name="android:colorBackground">?attr/colorPrimary</item>
+    </style>
+
+    <style name="PopupMenu" parent="@style/Widget.AppCompat.Light.PopupMenu">
+        <item name="overlapAnchor">true</item>
+    </style>
+
+    <style name="AppTheme.ContextMenuItem">
+        <!-- All these attributes bellow need to be defined in a theme using android:theme
+            otherwise they will have no effect... -->
+        <item name="android:listPreferredItemHeightSmall">48dp</item>
+
+        <!-- Set the padding to the children (menu item) of the NavigationView
+             (instead of the NavigationView itself) allowing the hit targets
+              to span the full width of the view. For more info, see
+              https://github.com/mozilla-mobile/focus-android/pull/1466#discussion_r144679954.
+
+              Note: listPreferredItemPaddingStart and listPreferredItemPaddingEnd
+              don't work in this context because in the design_navigation_item.xml (layout for NavigationMenuItem)
+              only listPreferredItemPaddingLeft and listPreferredItemPaddingRight attribute
+              are used for paddingLeft and paddingRight properties.
+              Check design_navigation_item.xml source here :
+              https://android.googlesource.com/platform/frameworks/support.git/+/master/design/res/layout/design_navigation_item.xml
+            -->
+        <item name="listPreferredItemPaddingLeft">@dimen/dialogHorizontalPadding</item>
+        <item name="listPreferredItemPaddingRight">@dimen/dialogHorizontalPadding</item>
+    </style>
+
+    <style name="ContextMenuTextAppearence">
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">@string/font_roboto_medium</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/colorTextActive</item>
+    </style>
+
+    <style name="DarkContextMenuTextAppearence" parent="ContextMenuTextAppearence">
+        <item name="android:textColor">@color/colorLightTextActive</item>
+    </style>
+</resources>
