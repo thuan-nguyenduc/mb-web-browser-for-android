@@ -4,13 +4,7 @@ Less than 5MB, this free internet explorer browser provides a large number of us
 This browser is small footprint, so it requires less device's memory but increases web browsing speed by more than 70% and saves data by 20%.</p>
 
 
-<img src="https://github.com/thuan-nguyenduc/mb-browser-for-android/blob/master/demo/screen-0.jpg?raw=true" width="170" height="449" />
-<img src="https://github.com/thuan-nguyenduc/mb-browser-for-android/blob/master/demo/screen-1.jpg?raw=true" width="170" height="449" />
-<img src="https://github.com/thuan-nguyenduc/mb-browser-for-android/blob/master/demo/screen-2.jpg?raw=true" width="170" height="449" />
-<img src="https://github.com/thuan-nguyenduc/mb-browser-for-android/blob/master/demo/screen-3.jpg?raw=true" width="170" height="449" />
-<img src="https://github.com/thuan-nguyenduc/mb-browser-for-android/blob/master/demo/screen-4.jpg?raw=true" width="170" height="449" />
-<img src="https://github.com/thuan-nguyenduc/mb-browser-for-android/blob/master/demo/screen-5.jpg?raw=true" width="170" height="449" />
-<img src="https://github.com/thuan-nguyenduc/mb-browser-for-android/blob/master/demo/screen-6.jpg?raw=true" width="170" height="449" />
+<img src="https://github.com/thuan-nguyenduc/mb-browser-for-android/blob/master/demo/screen-1.jpg?raw=true" width="535" height="896" />
 
 <br>
 <b>FEATURES:</b>
