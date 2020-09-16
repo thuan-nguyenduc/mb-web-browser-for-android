@@ -1,7 +1,7 @@
 
 <p>Small, fast, safe, private, powerful. This browser will help you to download video or music from favorite websites easily.
 Less than 5MB, this free internet explorer browser provides a large number of useful features as Block Unwanted Ads and Web Trackers, Speed Mode, Night Mode, Automatic Logout Mode, No Image Mode, Reading Mode, Desktop Mode, etc. With a built-in downloads manager, it helps to download faster than 60%.
-This browser is small footprint, so it requires less device's memory but increases web browsing speed by more than 70% and saves data by 20%.</p>
+This browser has  small footprint, so it requires less device's memory but increases web browsing speed by more than 70% and saves data by 20%.</p>
 
 
 <img src="https://github.com/thuan-nguyenduc/mb-browser-for-android/blob/master/demo/screen-1.jpg?raw=true" width="535" height="896" />
