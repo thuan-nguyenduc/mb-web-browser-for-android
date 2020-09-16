@@ -10,6 +10,8 @@ but increases web browsing speed by more than 70% and saves data by 20%</p>
 
 
 <img src="https://github.com/thuan-nguyenduc/mb-browser-for-android/blob/master/demo/screen-1.jpg?raw=true" width="535" height="896" />
+<br>
+<img src="https://github.com/thuan-nguyenduc/mb-browser-for-android/blob/master/demo/screen-4.jpg?raw=true" width="534" height="896" />
 
 <br>
 <b>FEATURES:</b>
