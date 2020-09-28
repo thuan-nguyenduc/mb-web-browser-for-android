@@ -23,7 +23,6 @@ import android.widget.AdapterView
 import android.widget.AdapterView.OnItemSelectedListener
 import android.widget.FrameLayout
 import com.xlab.vbrowser.R
-import com.xlab.vbrowser.activity.InfoActivity
 import com.xlab.vbrowser.autocomplete.UrlAutoCompleteFilter
 import com.xlab.vbrowser.events.IItemClickListener
 import com.xlab.vbrowser.history.service.HistoryService
@@ -313,11 +312,6 @@ class UrlInputFragment : LocaleAwareFragment(), View.OnClickListener, InlineAuto
             }
 
             R.id.settings -> (activity as LocaleAwareAppCompatActivity).openPreferences()
-
-            R.id.help -> {
-                val helpIntent = InfoActivity.getHelpIntent(activity)
-                startActivity(helpIntent)
-            }
 
             R.id.voiceView -> {
                 startVoiceRecord()

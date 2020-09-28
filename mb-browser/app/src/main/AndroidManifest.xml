@@ -8,7 +8,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
-    <!--<uses-permission android:name="android.permission.RECORD_AUDIO" />-->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="com.android.vending.BILLING" />
 
@@ -104,9 +104,6 @@
             android:configChanges="keyboard|keyboardHidden|mcc|mnc|orientation|screenSize|locale|layoutDirection|smallestScreenSize|screenLayout"
             android:windowSoftInputMode="adjustResize" >
         </activity>
-
-        <activity android:name="com.xlab.vbrowser.activity.InfoActivity"
-                  android:theme="@style/InfoTheme"/>
 
         <activity android:name="com.xlab.vbrowser.activity.EraseShortcutActivity"
             android:theme="@android:style/Theme.Translucent" />

@@ -34,8 +34,6 @@ public class UpApplication extends LocaleAwareApplication {
 
         PreferenceManager.setDefaultValues(this, R.xml.settings, false);
 
-        enableStrictMode();
-
         SearchEngineManager.getInstance().init(this);
 
         registerActivityLifecycleCallbacks(visibilityLifeCycleCallback = new VisibilityLifeCycleCallback(this));

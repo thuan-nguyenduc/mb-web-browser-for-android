@@ -85,8 +85,7 @@
                     android:layout_marginBottom="8dp"
                     android:layout_gravity="end"
                     style="?android:attr/borderlessButtonStyle"
-                    android:contentDescription="@string/content_description_voice_input"
-                    android:visibility="gone"/>
+                    android:contentDescription="@string/content_description_voice_input"/>
 
                 <ImageButton
                     android:id="@+id/clearView"

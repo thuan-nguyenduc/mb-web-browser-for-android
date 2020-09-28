@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.xlab.vbrowser.R;
-import com.xlab.vbrowser.activity.InstallFirefoxActivity;
 
 public class InstallBannerViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
     public static final int LAYOUT_ID = R.layout.item_install_banner;
@@ -28,6 +27,5 @@ public class InstallBannerViewHolder extends RecyclerView.ViewHolder implements 
 
     @Override
     public void onClick(View view) {
-        InstallFirefoxActivity.open(view.getContext());
     }
 }

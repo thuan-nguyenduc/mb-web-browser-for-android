@@ -18,7 +18,6 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
-import com.xlab.vbrowser.activity.InfoActivity;
 import com.xlab.vbrowser.locale.Locales;
 import com.xlab.vbrowser.search.SearchEngineManager;
 import com.xlab.vbrowser.utils.AppConstants;
@@ -147,19 +146,7 @@ public class SettingsFragment extends PreferenceFragment implements SharedPrefer
         // AppCompatActivity has a Toolbar that is used as the ActionBar, and it conflicts with the ActionBar
         // used by PreferenceScreen to create the headers (with title, back navigation), so we wrap all these
         // "preference screens" into separate activities.
-        if (preference.getKey().equals(resources.getString(com.xlab.vbrowser.R.string.pref_key_about))) {
-            final Intent intent = InfoActivity.getAboutIntent(getActivity());
-            startActivity(intent);
-        } else if (preference.getKey().equals(resources.getString(com.xlab.vbrowser.R.string.pref_key_help))) {
-            Intent helpIntent = InfoActivity.getHelpIntent(getActivity());
-            startActivity(helpIntent);
-        } else if (preference.getKey().equals(resources.getString(com.xlab.vbrowser.R.string.pref_key_rights))) {
-            final Intent intent = InfoActivity.getRightsIntent(getActivity());
-            startActivity(intent);
-        } else if (preference.getKey().equals(resources.getString(com.xlab.vbrowser.R.string.pref_key_privacy_notice))) {
-            final Intent intent = InfoActivity.getPrivacyNoticeIntent(getActivity());
-            startActivity(intent);
-        } else if (preference.getKey().equals(resources.getString(com.xlab.vbrowser.R.string.pref_key_search_engine))) {
+        if (preference.getKey().equals(resources.getString(com.xlab.vbrowser.R.string.pref_key_search_engine))) {
             showSettingsFragment(SettingsScreen.SEARCH_ENGINES);
         } else if (preference.getKey().equals(resources.getString(com.xlab.vbrowser.R.string.pref_key_manual_add_search_engine))) {
             showSettingsFragment(SettingsScreen.ADD_SEARCH);

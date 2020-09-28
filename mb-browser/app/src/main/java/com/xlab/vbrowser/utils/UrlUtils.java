@@ -52,7 +52,7 @@ public class UrlUtils {
         Uri uri = Uri.parse(trimmedInput);
 
         if (TextUtils.isEmpty(uri.getScheme())) {
-            uri = Uri.parse("http://" + trimmedInput);
+            uri = Uri.parse("https://" + trimmedInput);
         }
 
         return uri.toString();
@@ -80,7 +80,7 @@ public class UrlUtils {
         String trimmedUrl = url.trim();
         if (!trimmedUrl.matches("^.+?://.+?")) {
             // UI hint url doesn't have http scheme, so add it if necessary
-            trimmedUrl = "http://" + trimmedUrl;
+            trimmedUrl = "https://" + trimmedUrl;
         }
 
         if (!URLUtil.isNetworkUrl(trimmedUrl)) {

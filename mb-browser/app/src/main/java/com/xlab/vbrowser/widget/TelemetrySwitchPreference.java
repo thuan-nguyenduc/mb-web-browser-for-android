@@ -18,7 +18,6 @@ import android.widget.Switch;
 import android.widget.TextView;
 
 import com.xlab.vbrowser.R;
-import com.xlab.vbrowser.activity.InfoActivity;
 import com.xlab.vbrowser.utils.SupportUtils;
 
 /**
@@ -72,8 +71,8 @@ class TelemetrySwitchPreference extends Preference {
                 final String url = SupportUtils.getSumoURLForTopic(getContext(), "usage-data");
                 final String title = getTitle().toString();
 
-                final Intent intent = InfoActivity.getIntentFor(getContext(), url, title);
-                getContext().startActivity(intent);
+                //final Intent intent = InfoActivity.getIntentFor(getContext(), url, title);
+                //getContext().startActivity(intent);
             }
         });
 

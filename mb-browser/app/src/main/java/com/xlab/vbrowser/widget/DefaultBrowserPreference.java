@@ -13,7 +13,6 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.widget.Switch;
 
-import com.xlab.vbrowser.activity.InfoActivity;
 import com.xlab.vbrowser.R;
 import com.xlab.vbrowser.trackers.GaReport;
 import com.xlab.vbrowser.utils.Browsers;
@@ -89,7 +88,5 @@ public class DefaultBrowserPreference extends Preference {
     }
 
     private void openSumoPage(Context context) {
-        final Intent intent = InfoActivity.getIntentFor(context, SupportUtils.DEFAULT_BROWSER_URL, getTitle().toString());
-        context.startActivity(intent);
     }
 }
